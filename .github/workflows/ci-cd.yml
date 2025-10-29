@@ -33,6 +33,15 @@ jobs:
           cd lambda/layers/shared/nodejs
           npm ci
 
+      - name: Install Lambda function dependencies
+        run: |
+          for dir in get-products get-product-detail get-prices update-prices sync-products; do
+            echo "Installing dependencies for lambda/$dir..."
+            cd lambda/$dir
+            npm ci
+            cd ../..
+          done
+
       - name: Run linter
         run: npm run lint || echo "Lint errors found, but continuing..."
 
