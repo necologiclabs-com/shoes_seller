@@ -10,6 +10,9 @@ import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as cloudfront from 'aws-cdk-lib/aws-cloudfront';
 import * as origins from 'aws-cdk-lib/aws-cloudfront-origins';
 import * as cloudwatch from 'aws-cdk-lib/aws-cloudwatch';
+import * as acm from 'aws-cdk-lib/aws-certificatemanager';
+import * as route53 from 'aws-cdk-lib/aws-route53';
+import * as route53Targets from 'aws-cdk-lib/aws-route53-targets';
 import { Construct } from 'constructs';
 import * as path from 'path';
 
@@ -248,7 +251,7 @@ export class PriceComparisonStack extends cdk.Stack {
             cloudWatchRoleArn: apiGatewayLogRole.roleArn,
         });
 
-        // API Gateway REST API
+        // API Gateway REST API with CORS for custom domain
         const api = new apigateway.RestApi(this, 'PriceComparisonApi', {
             restApiName: 'Price Comparison API',
             description: 'API for trail running shoes price comparison',
@@ -259,7 +262,11 @@ export class PriceComparisonStack extends cdk.Stack {
                 metricsEnabled: true,
             },
             defaultCorsPreflightOptions: {
-                allowOrigins: apigateway.Cors.ALL_ORIGINS,
+                allowOrigins: [
+                    'https://shop-trail-run.neco-logic.com',
+                    'https://d20dyv94x2mgkq.cloudfront.net', // Keep CloudFront default domain
+                    'http://localhost:5173', // For local development
+                ],
                 allowMethods: apigateway.Cors.ALL_METHODS,
                 allowHeaders: [
                     'Content-Type',
@@ -268,6 +275,7 @@ export class PriceComparisonStack extends cdk.Stack {
                     'X-Api-Key',
                     'X-Amz-Security-Token',
                 ],
+                allowCredentials: true,
             },
         });
 
@@ -323,7 +331,17 @@ export class PriceComparisonStack extends cdk.Stack {
         // Grant CloudFront read access to S3 bucket
         frontendBucket.grantRead(originAccessIdentity);
 
-        // CloudFront Distribution
+        // Import ACM Certificate (must be in us-east-1 for CloudFront)
+        const certificate = acm.Certificate.fromCertificateArn(
+            this,
+            'Certificate',
+            'arn:aws:acm:us-east-1:034362042455:certificate/ae70849e-6084-4ec0-8781-4fdb6fede307'
+        );
+
+        // Custom domain configuration
+        const domainName = 'shop-trail-run.neco-logic.com';
+
+        // CloudFront Distribution with custom domain
         const distribution = new cloudfront.Distribution(this, 'FrontendDistribution', {
             defaultBehavior: {
                 origin: new origins.S3Origin(frontendBucket, {
@@ -335,6 +353,8 @@ export class PriceComparisonStack extends cdk.Stack {
                 compress: true,
                 cachePolicy: cloudfront.CachePolicy.CACHING_OPTIMIZED,
             },
+            domainNames: [domainName],
+            certificate: certificate,
             defaultRootObject: 'index.html',
             errorResponses: [
                 {
@@ -353,6 +373,26 @@ export class PriceComparisonStack extends cdk.Stack {
             priceClass: cloudfront.PriceClass.PRICE_CLASS_100, // Use only North America and Europe
             enabled: true,
             comment: 'Price Comparison Frontend Distribution',
+        });
+
+        // Import Route 53 Hosted Zone
+        const hostedZone = route53.HostedZone.fromHostedZoneAttributes(
+            this,
+            'HostedZone',
+            {
+                hostedZoneId: 'Z0026340WQ1AMVA4YAIL',
+                zoneName: 'neco-logic.com',
+            }
+        );
+
+        // Create Route 53 A record pointing to CloudFront
+        new route53.ARecord(this, 'FrontendAliasRecord', {
+            zone: hostedZone,
+            recordName: 'shop-trail-run',
+            target: route53.RecordTarget.fromAlias(
+                new route53Targets.CloudFrontTarget(distribution)
+            ),
+            comment: 'Alias record for Price Comparison frontend',
         });
 
         // Stack Outputs
@@ -415,7 +455,12 @@ export class PriceComparisonStack extends cdk.Stack {
 
         new cdk.CfnOutput(this, 'FrontendUrl', {
             value: `https://${distribution.distributionDomainName}`,
-            description: 'Frontend URL',
+            description: 'Frontend URL (CloudFront default)',
+        });
+
+        new cdk.CfnOutput(this, 'CustomDomainUrl', {
+            value: `https://${domainName}`,
+            description: 'Frontend URL (Custom Domain)',
         });
 
         // CloudWatch Dashboard for Monitoring
