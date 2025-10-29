@@ -117,7 +117,7 @@ jobs:
             echo "Building lambda/$dir..."
             cd lambda/$dir
             npm ci
-            npx tsc
+            npx tsc --noEmitOnError false
             cd ../..
           done
 
