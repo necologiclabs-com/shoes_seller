@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Trail running shoes price comparison affiliate site",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && tsc -p lambda/layers/shared/nodejs/tsconfig.json && tsc -p lambda/get-products/tsconfig.json && tsc -p lambda/get-product-detail/tsconfig.json && tsc -p lambda/get-prices/tsconfig.json && tsc -p lambda/sync-products/tsconfig.json && tsc -p lambda/update-prices/tsconfig.json",
     "watch": "tsc -w",
     "test": "echo \"No tests yet\" && exit 0",
     "cdk": "cdk",
