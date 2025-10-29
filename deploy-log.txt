@@ -1,0 +1,417 @@
+[22:59:07] CDK Toolkit CLI version: 2.1031.0 (build 3d7b09b)
+[22:59:07] Command line arguments: {
+  _: [ 'deploy' ],
+  'require-approval': 'never',
+  requireApproval: 'never',
+  verbose: 1,
+  v: 1,
+  app: undefined,
+  a: undefined,
+  build: undefined,
+  trace: undefined,
+  strict: undefined,
+  lookups: true,
+  'ignore-errors': false,
+  ignoreErrors: false,
+  json: false,
+  j: false,
+  debug: false,
+  profile: undefined,
+  proxy: undefined,
+  'ca-bundle-path': undefined,
+  caBundlePath: undefined,
+  ec2creds: undefined,
+  i: undefined,
+  'version-reporting': undefined,
+  telemetry: undefined,
+  versionReporting: undefined,
+  'path-metadata': undefined,
+  pathMetadata: undefined,
+  'asset-metadata': undefined,
+  assetMetadata: undefined,
+  'role-arn': undefined,
+  r: undefined,
+  roleArn: undefined,
+  staging: true,
+  output: undefined,
+  o: undefined,
+  notices: undefined,
+  'no-color': false,
+  noColor: false,
+  ci: false,
+  unstable: [],
+  'telemetry-file': undefined,
+  telemetryFile: undefined,
+  all: false,
+  'build-exclude': [],
+  E: [],
+  buildExclude: [],
+  exclusively: undefined,
+  e: undefined,
+  execute: undefined,
+  'change-set-name': undefined,
+  changeSetName: undefined,
+  method: undefined,
+  m: undefined,
+  'import-existing-resources': false,
+  importExistingResources: false,
+  force: false,
+  f: false,
+  parameters: [ {} ],
+  'outputs-file': undefined,
+  O: undefined,
+  outputsFile: undefined,
+  'previous-parameters': true,
+  previousParameters: true,
+  'toolkit-stack-name': undefined,
+  toolkitStackName: undefined,
+  progress: undefined,
+  rollback: undefined,
+  hotswap: undefined,
+  'hotswap-fallback': undefined,
+  hotswapFallback: undefined,
+  'hotswap-ecs-minimum-healthy-percent': undefined,
+  hotswapEcsMinimumHealthyPercent: undefined,
+  'hotswap-ecs-maximum-healthy-percent': undefined,
+  hotswapEcsMaximumHealthyPercent: undefined,
+  'hotswap-ecs-stabilization-timeout-seconds': undefined,
+  hotswapEcsStabilizationTimeoutSeconds: undefined,
+  watch: undefined,
+  logs: true,
+  concurrency: 1,
+  'asset-parallelism': undefined,
+  assetParallelism: undefined,
+  'asset-prebuild': true,
+  assetPrebuild: true,
+  'ignore-no-stacks': false,
+  ignoreNoStacks: false,
+  '$0': 'node_modules\\aws-cdk\\bin\\cdk',
+  language: undefined
+}
+[22:59:07] cdk.json: {
+  "app": "npx ts-node --prefer-ts-exts bin/app.ts",
+  "watch": {
+    "include": [
+      "**"
+    ],
+    "exclude": [
+      "README.md",
+      "cdk*.json",
+      "**/*.d.ts",
+      "**/*.js",
+      "tsconfig.json",
+      "package*.json",
+      "yarn.lock",
+      "node_modules",
+      "test"
+    ]
+  },
+  "context": {
+    "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
+    "@aws-cdk/core:checkSecretUsage": true,
+    "@aws-cdk/core:target-partitions": [
+      "aws",
+      "aws-cn"
+    ],
+    "@aws-cdk-containers/ecs-service-extensions:enableDefaultLogDriver": true,
+    "@aws-cdk/aws-ec2:uniqueImdsv2TemplateName": true,
+    "@aws-cdk/aws-ecs:arnFormatIncludesClusterName": true,
+    "@aws-cdk/aws-iam:minimizePolicies": true,
+    "@aws-cdk/core:validateSnapshotRemovalPolicy": true,
+    "@aws-cdk/aws-codepipeline:crossAccountKeyAliasStackSafeResourceName": true,
+    "@aws-cdk/aws-s3:createDefaultLoggingPolicy": true,
+    "@aws-cdk/aws-sns-subscriptions:restrictSqsDescryption": true,
+    "@aws-cdk/aws-apigateway:disableCloudWatchRole": true,
+    "@aws-cdk/core:enablePartitionLiterals": true,
+    "@aws-cdk/aws-events:eventsTargetQueueSameAccount": true,
+    "@aws-cdk/aws-iam:standardizedServicePrincipals": true,
+    "@aws-cdk/aws-ecs:disableExplicitDeploymentControllerForCircuitBreaker": true,
+    "@aws-cdk/aws-iam:importedRoleStackSafeDefaultPolicyName": true,
+    "@aws-cdk/aws-s3:serverAccessLogsUseBucketPolicy": true,
+    "@aws-cdk/aws-route53-patters:useCertificate": true,
+    "@aws-cdk/customresources:installLatestAwsSdkDefault": false,
+    "@aws-cdk/aws-rds:databaseProxyUniqueResourceName": true,
+    "@aws-cdk/aws-codedeploy:removeAlarmsFromDeploymentGroup": true,
+    "@aws-cdk/aws-apigateway:authorizerChangeDeploymentLogicalId": true,
+    "@aws-cdk/aws-ec2:launchTemplateDefaultUserData": true,
+    "@aws-cdk/aws-secretsmanager:useAttachedSecretResourcePolicyForSecretTargetAttachments": true,
+    "@aws-cdk/aws-redshift:columnId": true,
+    "@aws-cdk/aws-stepfunctions-tasks:enableEmrServicePolicyV2": true,
+    "@aws-cdk/aws-ec2:restrictDefaultSecurityGroup": true,
+    "@aws-cdk/aws-apigateway:requestValidatorUniqueId": true,
+    "@aws-cdk/aws-kms:aliasNameRef": true,
+    "@aws-cdk/aws-autoscaling:generateLaunchTemplateInsteadOfLaunchConfig": true,
+    "@aws-cdk/core:includePrefixInUniqueNameGeneration": true,
+    "@aws-cdk/aws-efs:denyAnonymousAccess": true,
+    "@aws-cdk/aws-opensearchservice:enableOpensearchMultiAzWithStandby": true,
+    "@aws-cdk/aws-lambda-nodejs:useLatestRuntimeVersion": true,
+    "@aws-cdk/aws-efs:mountTargetOrderInsensitiveLogicalId": true,
+    "@aws-cdk/aws-rds:auroraClusterChangeScopeOfInstanceParameterGroupWithEachParameters": true,
+    "@aws-cdk/aws-appsync:useArnForSourceApiAssociationIdentifier": true,
+    "@aws-cdk/aws-rds:preventRenderingDeprecatedCredentials": true,
+    "@aws-cdk/aws-codepipeline-actions:useNewDefaultBranchForCodeCommitSource": true,
+    "@aws-cdk/aws-cloudwatch-actions:changeLambdaPermissionLogicalIdForLambdaAction": true,
+    "@aws-cdk/aws-codepipeline:crossAccountKeysDefaultValueToFalse": true,
+    "@aws-cdk/aws-codepipeline:defaultPipelineTypeToV2": true,
+    "@aws-cdk/aws-kms:reduceCrossAccountRegionPolicyScope": true,
+    "@aws-cdk/aws-eks:nodegroupNameAttribute": true,
+    "@aws-cdk/aws-ec2:ebsDefaultGp3Volume": true,
+    "@aws-cdk/aws-ecs:removeDefaultDeploymentAlarm": true,
+    "@aws-cdk/custom-resources:logApiResponseDataPropertyTrueDefault": false,
+    "@aws-cdk/aws-s3:keepNotificationInImportedBucket": false
+  }
+}
+[22:59:07] merged settings: {
+  versionReporting: true,
+  assetMetadata: true,
+  pathMetadata: true,
+  output: 'cdk.out',
+  app: 'npx ts-node --prefer-ts-exts bin/app.ts',
+  watch: {
+    include: [ '**' ],
+    exclude: [
+      'README.md',
+      'cdk*.json',
+      '**/*.d.ts',
+      '**/*.js',
+      'tsconfig.json',
+      'package*.json',
+      'yarn.lock',
+      'node_modules',
+      'test'
+    ]
+  },
+  context: {
+    '@aws-cdk/aws-lambda:recognizeLayerVersion': true,
+    '@aws-cdk/core:checkSecretUsage': true,
+    '@aws-cdk/core:target-partitions': [ 'aws', 'aws-cn' ],
+    '@aws-cdk-containers/ecs-service-extensions:enableDefaultLogDriver': true,
+    '@aws-cdk/aws-ec2:uniqueImdsv2TemplateName': true,
+    '@aws-cdk/aws-ecs:arnFormatIncludesClusterName': true,
+    '@aws-cdk/aws-iam:minimizePolicies': true,
+    '@aws-cdk/core:validateSnapshotRemovalPolicy': true,
+    '@aws-cdk/aws-codepipeline:crossAccountKeyAliasStackSafeResourceName': true,
+    '@aws-cdk/aws-s3:createDefaultLoggingPolicy': true,
+    '@aws-cdk/aws-sns-subscriptions:restrictSqsDescryption': true,
+    '@aws-cdk/aws-apigateway:disableCloudWatchRole': true,
+    '@aws-cdk/core:enablePartitionLiterals': true,
+    '@aws-cdk/aws-events:eventsTargetQueueSameAccount': true,
+    '@aws-cdk/aws-iam:standardizedServicePrincipals': true,
+    '@aws-cdk/aws-ecs:disableExplicitDeploymentControllerForCircuitBreaker': true,
+    '@aws-cdk/aws-iam:importedRoleStackSafeDefaultPolicyName': true,
+    '@aws-cdk/aws-s3:serverAccessLogsUseBucketPolicy': true,
+    '@aws-cdk/aws-route53-patters:useCertificate': true,
+    '@aws-cdk/customresources:installLatestAwsSdkDefault': false,
+    '@aws-cdk/aws-rds:databaseProxyUniqueResourceName': true,
+    '@aws-cdk/aws-codedeploy:removeAlarmsFromDeploymentGroup': true,
+    '@aws-cdk/aws-apigateway:authorizerChangeDeploymentLogicalId': true,
+    '@aws-cdk/aws-ec2:launchTemplateDefaultUserData': true,
+    '@aws-cdk/aws-secretsmanager:useAttachedSecretResourcePolicyForSecretTargetAttachments': true,
+    '@aws-cdk/aws-redshift:columnId': true,
+    '@aws-cdk/aws-stepfunctions-tasks:enableEmrServicePolicyV2': true,
+    '@aws-cdk/aws-ec2:restrictDefaultSecurityGroup': true,
+    '@aws-cdk/aws-apigateway:requestValidatorUniqueId': true,
+    '@aws-cdk/aws-kms:aliasNameRef': true,
+    '@aws-cdk/aws-autoscaling:generateLaunchTemplateInsteadOfLaunchConfig': true,
+    '@aws-cdk/core:includePrefixInUniqueNameGeneration': true,
+    '@aws-cdk/aws-efs:denyAnonymousAccess': true,
+    '@aws-cdk/aws-opensearchservice:enableOpensearchMultiAzWithStandby': true,
+    '@aws-cdk/aws-lambda-nodejs:useLatestRuntimeVersion': true,
+    '@aws-cdk/aws-efs:mountTargetOrderInsensitiveLogicalId': true,
+    '@aws-cdk/aws-rds:auroraClusterChangeScopeOfInstanceParameterGroupWithEachParameters': true,
+    '@aws-cdk/aws-appsync:useArnForSourceApiAssociationIdentifier': true,
+    '@aws-cdk/aws-rds:preventRenderingDeprecatedCredentials': true,
+    '@aws-cdk/aws-codepipeline-actions:useNewDefaultBranchForCodeCommitSource': true,
+    '@aws-cdk/aws-cloudwatch-actions:changeLambdaPermissionLogicalIdForLambdaAction': true,
+    '@aws-cdk/aws-codepipeline:crossAccountKeysDefaultValueToFalse': true,
+    '@aws-cdk/aws-codepipeline:defaultPipelineTypeToV2': true,
+    '@aws-cdk/aws-kms:reduceCrossAccountRegionPolicyScope': true,
+    '@aws-cdk/aws-eks:nodegroupNameAttribute': true,
+    '@aws-cdk/aws-ec2:ebsDefaultGp3Volume': true,
+    '@aws-cdk/aws-ecs:removeDefaultDeploymentAlarm': true,
+    '@aws-cdk/custom-resources:logApiResponseDataPropertyTrueDefault': false,
+    '@aws-cdk/aws-s3:keepNotificationInImportedBucket': false
+  },
+  debug: false,
+  requireApproval: 'never',
+  toolkitBucket: {},
+  staging: true,
+  bundlingStacks: [ '**' ],
+  lookups: true,
+  assetPrebuild: true,
+  ignoreNoStacks: false,
+  hotswap: { ecs: {} },
+  unstable: []
+}
+[22:59:07] Reading cached notices from C:\Users\reiy\.cdk\cache\notices.json
+[22:59:07] Toolkit stack: CDKToolkit
+[22:59:07] context: {
+  '@aws-cdk/aws-lambda:recognizeLayerVersion': true,
+  '@aws-cdk/core:checkSecretUsage': true,
+  '@aws-cdk/core:target-partitions': [ 'aws', 'aws-cn' ],
+  '@aws-cdk-containers/ecs-service-extensions:enableDefaultLogDriver': true,
+  '@aws-cdk/aws-ec2:uniqueImdsv2TemplateName': true,
+  '@aws-cdk/aws-ecs:arnFormatIncludesClusterName': true,
+  '@aws-cdk/aws-iam:minimizePolicies': true,
+  '@aws-cdk/core:validateSnapshotRemovalPolicy': true,
+  '@aws-cdk/aws-codepipeline:crossAccountKeyAliasStackSafeResourceName': true,
+  '@aws-cdk/aws-s3:createDefaultLoggingPolicy': true,
+  '@aws-cdk/aws-sns-subscriptions:restrictSqsDescryption': true,
+  '@aws-cdk/aws-apigateway:disableCloudWatchRole': true,
+  '@aws-cdk/core:enablePartitionLiterals': true,
+  '@aws-cdk/aws-events:eventsTargetQueueSameAccount': true,
+  '@aws-cdk/aws-iam:standardizedServicePrincipals': true,
+  '@aws-cdk/aws-ecs:disableExplicitDeploymentControllerForCircuitBreaker': true,
+  '@aws-cdk/aws-iam:importedRoleStackSafeDefaultPolicyName': true,
+  '@aws-cdk/aws-s3:serverAccessLogsUseBucketPolicy': true,
+  '@aws-cdk/aws-route53-patters:useCertificate': true,
+  '@aws-cdk/customresources:installLatestAwsSdkDefault': false,
+  '@aws-cdk/aws-rds:databaseProxyUniqueResourceName': true,
+  '@aws-cdk/aws-codedeploy:removeAlarmsFromDeploymentGroup': true,
+  '@aws-cdk/aws-apigateway:authorizerChangeDeploymentLogicalId': true,
+  '@aws-cdk/aws-ec2:launchTemplateDefaultUserData': true,
+  '@aws-cdk/aws-secretsmanager:useAttachedSecretResourcePolicyForSecretTargetAttachments': true,
+  '@aws-cdk/aws-redshift:columnId': true,
+  '@aws-cdk/aws-stepfunctions-tasks:enableEmrServicePolicyV2': true,
+  '@aws-cdk/aws-ec2:restrictDefaultSecurityGroup': true,
+  '@aws-cdk/aws-apigateway:requestValidatorUniqueId': true,
+  '@aws-cdk/aws-kms:aliasNameRef': true,
+  '@aws-cdk/aws-autoscaling:generateLaunchTemplateInsteadOfLaunchConfig': true,
+  '@aws-cdk/core:includePrefixInUniqueNameGeneration': true,
+  '@aws-cdk/aws-efs:denyAnonymousAccess': true,
+  '@aws-cdk/aws-opensearchservice:enableOpensearchMultiAzWithStandby': true,
+  '@aws-cdk/aws-lambda-nodejs:useLatestRuntimeVersion': true,
+  '@aws-cdk/aws-efs:mountTargetOrderInsensitiveLogicalId': true,
+  '@aws-cdk/aws-rds:auroraClusterChangeScopeOfInstanceParameterGroupWithEachParameters': true,
+  '@aws-cdk/aws-appsync:useArnForSourceApiAssociationIdentifier': true,
+  '@aws-cdk/aws-rds:preventRenderingDeprecatedCredentials': true,
+  '@aws-cdk/aws-codepipeline-actions:useNewDefaultBranchForCodeCommitSource': true,
+  '@aws-cdk/aws-cloudwatch-actions:changeLambdaPermissionLogicalIdForLambdaAction': true,
+  '@aws-cdk/aws-codepipeline:crossAccountKeysDefaultValueToFalse': true,
+  '@aws-cdk/aws-codepipeline:defaultPipelineTypeToV2': true,
+  '@aws-cdk/aws-kms:reduceCrossAccountRegionPolicyScope': true,
+  '@aws-cdk/aws-eks:nodegroupNameAttribute': true,
+  '@aws-cdk/aws-ec2:ebsDefaultGp3Volume': true,
+  '@aws-cdk/aws-ecs:removeDefaultDeploymentAlarm': true,
+  '@aws-cdk/custom-resources:logApiResponseDataPropertyTrueDefault': false,
+  '@aws-cdk/aws-s3:keepNotificationInImportedBucket': false,
+  'aws:cdk:enable-path-metadata': true,
+  'aws:cdk:enable-asset-metadata': true,
+  'aws:cdk:version-reporting': true,
+  'aws:cdk:bundling-stacks': [ '**' ]
+}
+[22:59:07] Setting "CDK_DEFAULT_REGION" environment variable to ap-northeast-1
+[22:59:07] Retrieved account ID 034362042455 from disk cache
+[22:59:07] Setting "CDK_DEFAULT_ACCOUNT" environment variable to 034362042455
+[22:59:07] outdir: cdk.out
+[22:59:07] env: {
+  CDK_DEFAULT_REGION: 'ap-northeast-1',
+  CDK_DEFAULT_ACCOUNT: '034362042455',
+  CDK_OUTDIR: 'cdk.out',
+  CDK_CLI_ASM_VERSION: '48.0.0',
+  CDK_CLI_VERSION: '2.1031.0'
+}
+[WARNING] aws-cdk-lib.aws_dynamodb.TableOptions#pointInTimeRecovery is deprecated.
+  use `pointInTimeRecoverySpecification` instead
+  This API will be removed in the next major release.
+[WARNING] aws-cdk-lib.aws_cloudfront_origins.S3Origin is deprecated.
+  Use `S3BucketOrigin` or `S3StaticWebsiteOrigin` instead.
+  This API will be removed in the next major release.
+[WARNING] aws-cdk-lib.aws_cloudfront_origins.S3Origin#bind is deprecated.
+  Use `S3BucketOrigin` or `S3StaticWebsiteOrigin` instead.
+  This API will be removed in the next major release.
+[WARNING] aws-cdk-lib.aws_lambda.FunctionOptions#logRetention is deprecated.
+  use `logGroup` instead
+  This API will be removed in the next major release.
+[WARNING] aws-cdk-lib.aws_lambda.FunctionOptions#logRetention is deprecated.
+  use `logGroup` instead
+  This API will be removed in the next major release.
+[WARNING] aws-cdk-lib.aws_lambda.FunctionOptions#logRetention is deprecated.
+  use `logGroup` instead
+  This API will be removed in the next major release.
+[WARNING] aws-cdk-lib.aws_lambda.FunctionOptions#logRetention is deprecated.
+  use `logGroup` instead
+  This API will be removed in the next major release.
+[WARNING] aws-cdk-lib.aws_lambda.FunctionOptions#logRetention is deprecated.
+  use `logGroup` instead
+  This API will be removed in the next major release.
+[WARNING] aws-cdk-lib.aws_cloudfront_origins.S3Origin is deprecated.
+  Use `S3BucketOrigin` or `S3StaticWebsiteOrigin` instead.
+  This API will be removed in the next major release.
+[WARNING] aws-cdk-lib.aws_cloudfront_origins.S3Origin#bind is deprecated.
+  Use `S3BucketOrigin` or `S3StaticWebsiteOrigin` instead.
+  This API will be removed in the next major release.
+
+笨ｨ  Synthesis time: 8.99s
+
+[22:59:16] Checking for previously published assets
+[22:59:16] Retrieved account ID 034362042455 from disk cache
+[22:59:16] Assuming role 'arn:aws:iam::034362042455:role/cdk-hnb659fds-file-publishing-role-034362042455-ap-northeast-1'.
+[22:59:16] Retrieved account ID 034362042455 from disk cache
+[22:59:16] Assuming role 'arn:aws:iam::034362042455:role/cdk-hnb659fds-file-publishing-role-034362042455-ap-northeast-1'.
+[22:59:16] Retrieved account ID 034362042455 from disk cache
+[22:59:16] Assuming role 'arn:aws:iam::034362042455:role/cdk-hnb659fds-file-publishing-role-034362042455-ap-northeast-1'.
+[22:59:16] Retrieved account ID 034362042455 from disk cache
+[22:59:16] Assuming role 'arn:aws:iam::034362042455:role/cdk-hnb659fds-file-publishing-role-034362042455-ap-northeast-1'.
+[22:59:16] Retrieved account ID 034362042455 from disk cache
+[22:59:16] Assuming role 'arn:aws:iam::034362042455:role/cdk-hnb659fds-file-publishing-role-034362042455-ap-northeast-1'.
+[22:59:16] Retrieved account ID 034362042455 from disk cache
+[22:59:16] Assuming role 'arn:aws:iam::034362042455:role/cdk-hnb659fds-file-publishing-role-034362042455-ap-northeast-1'.
+[22:59:16] Retrieved account ID 034362042455 from disk cache
+[22:59:16] Assuming role 'arn:aws:iam::034362042455:role/cdk-hnb659fds-file-publishing-role-034362042455-ap-northeast-1'.
+[22:59:16] Retrieved account ID 034362042455 from disk cache
+[22:59:16] Assuming role 'arn:aws:iam::034362042455:role/cdk-hnb659fds-file-publishing-role-034362042455-ap-northeast-1'.
+[22:59:16] PriceComparisonStack: check: Check s3://cdk-hnb659fds-assets-034362042455-ap-northeast-1/4a38572afbb7c7a4c7dc8d363db4795374e54471705d8061b5c7dc8c34e197f3.zip
+[22:59:16] PriceComparisonStack: check: Check s3://cdk-hnb659fds-assets-034362042455-ap-northeast-1/0e9bec56b5771675fd026ff840079be6566bfd4026e402b50a34e566c3eaa733.zip
+[22:59:16] PriceComparisonStack: check: Check s3://cdk-hnb659fds-assets-034362042455-ap-northeast-1/2819175352ad1ce0dae768e83fc328fb70fb5f10b4a8ff0ccbcb791f02b0716d.zip
+[22:59:16] PriceComparisonStack: check: Check s3://cdk-hnb659fds-assets-034362042455-ap-northeast-1/3fe8860b0703af225fe6106f6588f436ee839fe7e4645517d0d7b3f357762e7d.zip
+[22:59:16] PriceComparisonStack: check: Check s3://cdk-hnb659fds-assets-034362042455-ap-northeast-1/93fad139cfb9dbea544ca2d57d8f5236dd4f63f756d0ad0879ace4f54cf56fb9.zip
+[22:59:16] PriceComparisonStack: check: Check s3://cdk-hnb659fds-assets-034362042455-ap-northeast-1/8d97aa293237f20c512a0e3c382f19dad774142c891aa0253dd3fe56148b1707.json
+[22:59:16] PriceComparisonStack: check: Check s3://cdk-hnb659fds-assets-034362042455-ap-northeast-1/201895fa148c03a5c953d41f5d48467d4f8ad16ad067198dc07ebbcd3f7954a9.zip
+[22:59:16] PriceComparisonStack: check: Check s3://cdk-hnb659fds-assets-034362042455-ap-northeast-1/1904396571effb08ec103644ee652354279902d2318e21811e6dfdc772c4caa1.zip
+[22:59:16] PriceComparisonStack: found: Found s3://cdk-hnb659fds-assets-034362042455-ap-northeast-1/4a38572afbb7c7a4c7dc8d363db4795374e54471705d8061b5c7dc8c34e197f3.zip
+[22:59:16] PriceComparisonStack: found: Found s3://cdk-hnb659fds-assets-034362042455-ap-northeast-1/0e9bec56b5771675fd026ff840079be6566bfd4026e402b50a34e566c3eaa733.zip
+[22:59:16] PriceComparisonStack: found: Found s3://cdk-hnb659fds-assets-034362042455-ap-northeast-1/3fe8860b0703af225fe6106f6588f436ee839fe7e4645517d0d7b3f357762e7d.zip
+[22:59:16] PriceComparisonStack: found: Found s3://cdk-hnb659fds-assets-034362042455-ap-northeast-1/1904396571effb08ec103644ee652354279902d2318e21811e6dfdc772c4caa1.zip
+[22:59:16] PriceComparisonStack: found: Found s3://cdk-hnb659fds-assets-034362042455-ap-northeast-1/201895fa148c03a5c953d41f5d48467d4f8ad16ad067198dc07ebbcd3f7954a9.zip
+[22:59:16] PriceComparisonStack: found: Found s3://cdk-hnb659fds-assets-034362042455-ap-northeast-1/93fad139cfb9dbea544ca2d57d8f5236dd4f63f756d0ad0879ace4f54cf56fb9.zip
+[22:59:16] PriceComparisonStack: found: Found s3://cdk-hnb659fds-assets-034362042455-ap-northeast-1/2819175352ad1ce0dae768e83fc328fb70fb5f10b4a8ff0ccbcb791f02b0716d.zip
+[22:59:16] PriceComparisonStack: found: Found s3://cdk-hnb659fds-assets-034362042455-ap-northeast-1/8d97aa293237f20c512a0e3c382f19dad774142c891aa0253dd3fe56148b1707.json
+[22:59:16] 8 total assets, 0 still need to be published
+PriceComparisonStack: deploying... [1/1]
+[22:59:16] Retrieved account ID 034362042455 from disk cache
+[22:59:16] Assuming role 'arn:aws:iam::034362042455:role/cdk-hnb659fds-deploy-role-034362042455-ap-northeast-1'.
+[22:59:16] Retrieved account ID 034362042455 from disk cache
+[22:59:16] PriceComparisonStack: checking if we can skip deploy
+[22:59:17] PriceComparisonStack: skipping deployment (use --force to override)
+
+ 笨・ PriceComparisonStack (no changes)
+
+笨ｨ  Deployment time: 0.45s
+
+Outputs:
+PriceComparisonStack.ApiServerErrorAlarmArn = arn:aws:cloudwatch:ap-northeast-1:034362042455:alarm:PriceComparison-API-High5xxErrors
+PriceComparisonStack.ApiUrl = https://0k3yewd8c6.execute-api.ap-northeast-1.amazonaws.com/prod/
+PriceComparisonStack.CloudFrontDistributionId = E2X7NVQCWT7SSV
+PriceComparisonStack.CloudFrontDomainName = d20dyv94x2mgkq.cloudfront.net
+PriceComparisonStack.DashboardUrl = https://console.aws.amazon.com/cloudwatch/home?region=ap-northeast-1#dashboards:name=PriceComparisonMonitoring
+PriceComparisonStack.FrontendBucketArn = arn:aws:s3:::price-comparison-frontend-034362042455-ap-northeast-1
+PriceComparisonStack.FrontendBucketName = price-comparison-frontend-034362042455-ap-northeast-1
+PriceComparisonStack.FrontendUrl = https://d20dyv94x2mgkq.cloudfront.net
+PriceComparisonStack.GetPricesErrorAlarmArn = arn:aws:cloudwatch:ap-northeast-1:034362042455:alarm:PriceComparison-GetPrices-HighErrorRate
+PriceComparisonStack.GetProductDetailErrorAlarmArn = arn:aws:cloudwatch:ap-northeast-1:034362042455:alarm:PriceComparison-GetProductDetail-HighErrorRate
+PriceComparisonStack.GetProductsErrorAlarmArn = arn:aws:cloudwatch:ap-northeast-1:034362042455:alarm:PriceComparison-GetProducts-HighErrorRate
+PriceComparisonStack.PriceComparisonApiEndpoint0265EF29 = https://0k3yewd8c6.execute-api.ap-northeast-1.amazonaws.com/prod/
+PriceComparisonStack.SyncProductsErrorAlarmArn = arn:aws:cloudwatch:ap-northeast-1:034362042455:alarm:PriceComparison-SyncProducts-Failed
+PriceComparisonStack.SyncProductsFunctionName = PriceComparisonStack-SyncProductsFunctionE1359B4C-i11ILrDKqDD4
+PriceComparisonStack.SyncProductsRuleName = price-comparison-sync-products
+PriceComparisonStack.TableArn = arn:aws:dynamodb:ap-northeast-1:034362042455:table/PriceComparisonTable
+PriceComparisonStack.TableName = PriceComparisonTable
+PriceComparisonStack.UpdatePricesErrorAlarmArn = arn:aws:cloudwatch:ap-northeast-1:034362042455:alarm:PriceComparison-UpdatePrices-Failed
+PriceComparisonStack.UpdatePricesFunctionName = PriceComparisonStack-UpdatePricesFunctionE9E39D46-HSkMDPFTBvpw
+PriceComparisonStack.UpdatePricesRuleName = price-comparison-update-prices
+Stack ARN:
+arn:aws:cloudformation:ap-northeast-1:034362042455:stack/PriceComparisonStack/f0ac2bc0-b26d-11f0-b143-0a755b5a94e5
+
+笨ｨ  Total time: 9.44s
+

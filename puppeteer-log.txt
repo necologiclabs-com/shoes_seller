@@ -1,0 +1,16 @@
+､・Starting automated HOKA image download...
+
+泊 Using AWS Profile: hikaku-dev
+逃 S3 Bucket: price-comparison-images-533267394861
+投 DynamoDB Table: PriceComparisonTable
+件 Region: ap-northeast-1
+
+
+======================================================================
+逃 Processing: Speedgoat 5 (Men)
+迫 URL: https://www.hoka.com/en/us/mens-trail/speedgoat-5/195719270445.html
+・ Product ID: HOKA-SPEEDGOAT5
+======================================================================
+塘 Loading page: https://www.hoka.com/en/us/mens-trail/speedgoat-5/195719270445.html
+笨・Page loaded (DOM ready)
+竢ｳ Waiting 5 seconds for images to load...

@@ -1,0 +1,378 @@
+{
+    "Item": {
+        "entityType": {
+            "S": "product"
+        },
+        "createdAt": {
+            "S": "2025-10-27T10:00:31.345Z"
+        },
+        "brand": {
+            "S": "Salomon"
+        },
+        "sizes": {
+            "L": [
+                {
+                    "S": "25"
+                },
+                {
+                    "S": "25.5"
+                },
+                {
+                    "S": "26"
+                },
+                {
+                    "S": "26.5"
+                },
+                {
+                    "S": "27"
+                },
+                {
+                    "S": "27.5"
+                },
+                {
+                    "S": "28"
+                },
+                {
+                    "S": "28.5"
+                },
+                {
+                    "S": "29"
+                },
+                {
+                    "S": "30"
+                },
+                {
+                    "S": "31"
+                }
+            ]
+        },
+        "modelNumber": {
+            "S": "L478834"
+        },
+        "GSI1SK": {
+            "S": "PRODUCT#6eecceb1-4ba2-4f0c-87cc-f1231357dedf"
+        },
+        "name": {
+            "S": "ULTRA FLOW 2"
+        },
+        "GSI1PK": {
+            "S": "BRAND#Salomon"
+        },
+        "imageUrl": {
+            "S": "https://cdn.shopify.com/s/files/1/0673/9981/1381/files/L47883400_0_GHO_ULTRAFLOW2Alloy-Wh.png?v=1752474638"
+        },
+        "colors": {
+            "L": [
+                {
+                    "S": "Alloy / White / French Blue"
+                }
+            ]
+        },
+        "lastSynced": {
+            "S": "2025-10-27T11:05:55.918Z"
+        },
+        "officialPrice": {
+            "N": "15400"
+        },
+        "updatedAt": {
+            "S": "2025-10-27T11:05:55.918Z"
+        },
+        "category": {
+            "S": "trail-running"
+        },
+        "description": {
+            "S": "Ultra Flow 2 は、耐久レースを楽に感じさせてくれるトレイルランニングシューズ。ダイナミックなクッション性をもたらす Opti Form ミッドソールと、あらゆるコンディションで確実なグリップ力を発揮する当社自慢のソールテクノロジー、軽量で通気性に優れたアッパーといった特徴を備え、スタートからゴールまで抜群の快適性を提供します。"
+        },
+        "PK": {
+            "S": "PRODUCT#6eecceb1-4ba2-4f0c-87cc-f1231357dedf"
+        },
+        "officialUrl": {
+            "S": "https://salomon.jp/products/ultra-flow-2-l478834"
+        },
+        "variants": {
+            "L": [
+                {
+                    "M": {
+                        "color": {
+                            "S": "Alloy / White / French Blue"
+                        },
+                        "size": {
+                            "S": "25"
+                        },
+                        "price": {
+                            "N": "15400"
+                        },
+                        "available": {
+                            "BOOL": true
+                        },
+                        "id": {
+                            "N": "51088437150005"
+                        },
+                        "sku": {
+                            "S": "L47883400026"
+                        },
+                        "barcode": {
+                            "S": "0198720137363"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "color": {
+                            "S": "Alloy / White / French Blue"
+                        },
+                        "size": {
+                            "S": "25.5"
+                        },
+                        "price": {
+                            "N": "15400"
+                        },
+                        "available": {
+                            "BOOL": true
+                        },
+                        "id": {
+                            "N": "51088437182773"
+                        },
+                        "sku": {
+                            "S": "L47883400027"
+                        },
+                        "barcode": {
+                            "S": "0198720137400"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "color": {
+                            "S": "Alloy / White / French Blue"
+                        },
+                        "size": {
+                            "S": "26"
+                        },
+                        "price": {
+                            "N": "15400"
+                        },
+                        "available": {
+                            "BOOL": true
+                        },
+                        "id": {
+                            "N": "51088437215541"
+                        },
+                        "sku": {
+                            "S": "L47883400028"
+                        },
+                        "barcode": {
+                            "S": "0198720137332"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "color": {
+                            "S": "Alloy / White / French Blue"
+                        },
+                        "size": {
+                            "S": "26.5"
+                        },
+                        "price": {
+                            "N": "15400"
+                        },
+                        "available": {
+                            "BOOL": true
+                        },
+                        "id": {
+                            "N": "51088437248309"
+                        },
+                        "sku": {
+                            "S": "L47883400029"
+                        },
+                        "barcode": {
+                            "S": "0198720137325"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "color": {
+                            "S": "Alloy / White / French Blue"
+                        },
+                        "size": {
+                            "S": "27"
+                        },
+                        "price": {
+                            "N": "15400"
+                        },
+                        "available": {
+                            "BOOL": true
+                        },
+                        "id": {
+                            "N": "51088437281077"
+                        },
+                        "sku": {
+                            "S": "L47883400030"
+                        },
+                        "barcode": {
+                            "S": "0198720137431"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "color": {
+                            "S": "Alloy / White / French Blue"
+                        },
+                        "size": {
+                            "S": "27.5"
+                        },
+                        "price": {
+                            "N": "15400"
+                        },
+                        "available": {
+                            "BOOL": true
+                        },
+                        "id": {
+                            "N": "51088437313845"
+                        },
+                        "sku": {
+                            "S": "L47883400031"
+                        },
+                        "barcode": {
+                            "S": "0198720137349"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "color": {
+                            "S": "Alloy / White / French Blue"
+                        },
+                        "size": {
+                            "S": "28"
+                        },
+                        "price": {
+                            "N": "15400"
+                        },
+                        "available": {
+                            "BOOL": true
+                        },
+                        "id": {
+                            "N": "51088437346613"
+                        },
+                        "sku": {
+                            "S": "L47883400032"
+                        },
+                        "barcode": {
+                            "S": "0198720137370"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "color": {
+                            "S": "Alloy / White / French Blue"
+                        },
+                        "size": {
+                            "S": "28.5"
+                        },
+                        "price": {
+                            "N": "15400"
+                        },
+                        "available": {
+                            "BOOL": true
+                        },
+                        "id": {
+                            "N": "51088437379381"
+                        },
+                        "sku": {
+                            "S": "L47883400033"
+                        },
+                        "barcode": {
+                            "S": "0198720137318"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "color": {
+                            "S": "Alloy / White / French Blue"
+                        },
+                        "size": {
+                            "S": "29"
+                        },
+                        "price": {
+                            "N": "15400"
+                        },
+                        "available": {
+                            "BOOL": true
+                        },
+                        "id": {
+                            "N": "51088437412149"
+                        },
+                        "sku": {
+                            "S": "L47883400034"
+                        },
+                        "barcode": {
+                            "S": "0198720137356"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "color": {
+                            "S": "Alloy / White / French Blue"
+                        },
+                        "size": {
+                            "S": "30"
+                        },
+                        "price": {
+                            "N": "15400"
+                        },
+                        "available": {
+                            "BOOL": true
+                        },
+                        "id": {
+                            "N": "51088437444917"
+                        },
+                        "sku": {
+                            "S": "L47883400036"
+                        },
+                        "barcode": {
+                            "S": "0198720137417"
+                        }
+                    }
+                },
+                {
+                    "M": {
+                        "color": {
+                            "S": "Alloy / White / French Blue"
+                        },
+                        "size": {
+                            "S": "31"
+                        },
+                        "price": {
+                            "N": "15400"
+                        },
+                        "available": {
+                            "BOOL": true
+                        },
+                        "id": {
+                            "N": "51088437477685"
+                        },
+                        "sku": {
+                            "S": "L47883400038"
+                        },
+                        "barcode": {
+                            "S": "0198720137394"
+                        }
+                    }
+                }
+            ]
+        },
+        "inStock": {
+            "BOOL": true
+        },
+        "SK": {
+            "S": "METADATA"
+        }
+    }
+}

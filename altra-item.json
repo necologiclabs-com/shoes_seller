@@ -1,0 +1,46 @@
+{
+    "Item": {
+        "createdAt": {
+            "S": "2025-10-28T13:40:59.183Z"
+        },
+        "brand": {
+            "S": "ALTRA"
+        },
+        "modelNumber": {
+            "S": "OLYMPUS-5-WW"
+        },
+        "GSI1SK": {
+            "S": "PRODUCT#0473a3f0-9068-41db-82e1-cdddf0b05530"
+        },
+        "gender": {
+            "S": "WOMENS"
+        },
+        "GSI1PK": {
+            "S": "BRAND#ALTRA"
+        },
+        "updatedAt": {
+            "S": "2025-10-28T13:40:59.183Z"
+        },
+        "category": {
+            "S": "trail"
+        },
+        "description": {
+            "S": "OLYMPUS 5 （オリンパス 5）ウィメンズ - ALTRAのトレイルランニングシューズ"
+        },
+        "PK": {
+            "S": "PRODUCT#0473a3f0-9068-41db-82e1-cdddf0b05530"
+        },
+        "id": {
+            "S": "0473a3f0-9068-41db-82e1-cdddf0b05530"
+        },
+        "productName": {
+            "S": "ALTRA Olympus 5 （オリンパス 5）ウィメンズ"
+        },
+        "officialUrl": {
+            "S": "https://altrafootwear.jp/products/olympus-5-w"
+        },
+        "SK": {
+            "S": "METADATA"
+        }
+    }
+}

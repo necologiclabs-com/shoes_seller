@@ -1,0 +1,13 @@
+{
+    "Items": [],
+    "Count": 0,
+    "ScannedCount": 1,
+    "LastEvaluatedKey": {
+        "PK": {
+            "S": "PRODUCT#5be88878-c34c-44c3-83a1-c698ed88a4c1"
+        },
+        "SK": {
+            "S": "METADATA"
+        }
+    }
+}
