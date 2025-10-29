@@ -4,6 +4,8 @@
 
 A modern web application that compares prices for trail running shoes across multiple e-commerce platforms (Amazon, Rakuten, Yodobashi, Mercari) with affiliate link integration.
 
+[![CI/CD Pipeline](https://github.com/necologiclabs-com/shoes_seller/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/necologiclabs-com/shoes_seller/actions/workflows/ci-cd.yml)
+
 ## 📋 Table of Contents
 
 - [Overview](#overview)
@@ -12,6 +14,7 @@ A modern web application that compares prices for trail running shoes across mul
 - [Technology Stack](#technology-stack)
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
+- [CI/CD with GitHub Actions](#cicd-with-github-actions)
 - [Deployment](#deployment)
 - [Configuration](#configuration)
 - [Development](#development)
@@ -33,7 +36,7 @@ This application provides a comprehensive price comparison service for trail run
 - Access affiliate links to purchase products
 - See savings opportunities with highlighted best prices
 
-The system uses a serverless architecture on AWS with automated price updates every 6 hours.
+The system uses a serverless architecture on AWS with automated price updates every 6 hours and continuous deployment via GitHub Actions.
 
 ## ✨ Features
 
@@ -368,7 +371,52 @@ For detailed setup instructions, see:
 - [DEPLOYMENT.md](./DEPLOYMENT.md) - Deployment guide
 - [AFFILIATE_CONFIGURATION.md](./AFFILIATE_CONFIGURATION.md) - Affiliate setup guide
 
-## 📦 Deployment
+## � CI/CD with GitHub Actions
+
+This project uses GitHub Actions for continuous integration and deployment.
+
+### Automated Workflows
+
+**CI Pipeline** (on all pushes and PRs):
+- ✅ Lint checking
+- ✅ TypeScript build
+- ✅ Test execution
+- ✅ Frontend build
+
+**CD Pipeline** (on main branch only):
+- 🚀 Infrastructure deployment (CDK)
+- 🚀 Frontend deployment to S3
+- 🚀 CloudFront cache invalidation
+
+### Setup GitHub Actions
+
+1. **Configure AWS credentials as GitHub Secrets**:
+   - `AWS_ACCESS_KEY_ID`
+   - `AWS_SECRET_ACCESS_KEY`
+   - `AWS_ACCOUNT_ID`
+   - `VITE_API_BASE_URL`
+
+2. **Run CDK Bootstrap** (first time only):
+   ```bash
+   npx cdk bootstrap aws://YOUR_ACCOUNT_ID/ap-northeast-1
+   ```
+
+3. **Push to main branch**:
+   ```bash
+   git push origin main
+   ```
+
+For detailed instructions, see:
+- [GITHUB_ACTIONS_SETUP.md](./GITHUB_ACTIONS_SETUP.md) - Complete CI/CD setup guide
+- [GITHUB_SECRETS_SETUP.md](./GITHUB_SECRETS_SETUP.md) - GitHub Secrets configuration
+
+### Workflow Status
+
+Check the status of your workflows:
+- Go to the **Actions** tab in your GitHub repository
+- View logs, re-run failed jobs, or cancel workflows
+
+## �📦 Deployment
 
 ### Quick Deployment
 
