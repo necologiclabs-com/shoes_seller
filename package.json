@@ -17,7 +17,9 @@
     "format": "prettier --write \"**/*.{ts,json,md}\"",
     "seed:products": "ts-node scripts/seed-products.ts",
     "verify:seed": "ts-node scripts/verify-seed.ts",
-    "verify:e2e": "ts-node scripts/verify-e2e.ts"
+    "verify:e2e": "ts-node scripts/verify-e2e.ts",
+    "download:altra-images": "ts-node scripts/download-altra-images.ts",
+    "test:altra-images": "ts-node scripts/test-altra-images.ts"
   },
   "keywords": [],
   "author": "",
