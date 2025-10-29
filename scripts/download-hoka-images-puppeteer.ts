@@ -128,50 +128,59 @@ async function getImageUrlFromPage(url: string): Promise<string | null> {
         console.log('🔍 Searching for image...');
 
         // メイン画像を取得（このコードはブラウザ内で実行される）
-        // @ts-ignore - ブラウザコンテキストでのDOM操作
-        const imageUrl: string | null = await page.evaluate(() => {
-            const selectors = [
-                '.product-image-wrapper img',
-                '.product-primary-image img',
-                '.pdp-main-image img',
-                'img[data-testid="pdp-image"]',
-                '.slick-active img',
-                '[class*="ProductImage"] img',
-                'picture img',
-                'main img',
-            ];
+        const imageUrl: string | null = await page.evaluate((selectorList) => {
+            type BrowserImage = {
+                src?: string;
+                srcset?: string;
+                naturalWidth?: number;
+            };
 
+            const doc = (globalThis as unknown as {
+                document?: {
+                    querySelector: (selector: string) => BrowserImage | null;
+                    querySelectorAll: (selector: string) => ArrayLike<BrowserImage>;
+                };
+            }).document;
+            if (!doc) {
+                return null;
+            }
+
+            const selectors = selectorList;
             for (const selector of selectors) {
-                // @ts-ignore
-                const img = document.querySelector(selector);
-                if (img && img.src && img.src.startsWith('http')) {
-                    console.log(`Found with selector: ${selector}`);
-                    // srcsetから最高解像度を取得
-                    if (img.srcset) {
-                        // @ts-ignore
-                        const urls = img.srcset.split(',').map(s => s.trim().split(' ')[0]);
+                const img = doc.querySelector(selector);
+                if (img?.src?.startsWith('http')) {
+                    if (typeof img.srcset === 'string') {
+                        const urls = img.srcset
+                            .split(',')
+                            .map((entry) => entry.trim().split(' ')[0])
+                            .filter(Boolean);
                         if (urls.length > 0) {
                             return urls[urls.length - 1];
                         }
                     }
+
                     return img.src;
                 }
             }
 
-            // フォールバック：大きい画像を探す
-            // @ts-ignore
-            const allImages = Array.from(document.querySelectorAll('img'));
-            const validImages = allImages
-                // @ts-ignore
-                .filter(img => img.src && img.src.startsWith('http'))
-                // @ts-ignore
-                .filter(img => img.naturalWidth > 400)
-                // @ts-ignore
-                .sort((a, b) => b.naturalWidth - a.naturalWidth);
+            const allImages = doc.querySelectorAll('img');
+            const validImages = Array.from(allImages)
+                .filter((candidate) => candidate?.src?.startsWith('http'))
+                .filter((candidate) => Number(candidate?.naturalWidth ?? 0) > 400)
+                .sort((a, b) => Number(b?.naturalWidth ?? 0) - Number(a?.naturalWidth ?? 0));
 
-            // @ts-ignore
-            return validImages[0]?.src || null;
-        });
+            const fallback = validImages[0];
+            return fallback?.src ?? null;
+        }, [
+            '.product-image-wrapper img',
+            '.product-primary-image img',
+            '.pdp-main-image img',
+            'img[data-testid="pdp-image"]',
+            '.slick-active img',
+            '[class*="ProductImage"] img',
+            'picture img',
+            'main img',
+        ]);
 
         if (!imageUrl) {
             console.error('❌ No image URL found on page');
