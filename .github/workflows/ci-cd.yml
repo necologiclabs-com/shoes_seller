@@ -150,7 +150,7 @@ jobs:
         run: |
           DISTRIBUTION_ID=$(aws cloudformation describe-stacks \
             --stack-name PriceComparisonStack \
-            --query "Stacks[0].Outputs[?OutputKey=='FrontendDistributionId'].OutputValue" \
+            --query "Stacks[0].Outputs[?OutputKey=='CloudFrontDistributionId'].OutputValue" \
             --output text)
           echo "distribution_id=${DISTRIBUTION_ID}" >> $GITHUB_OUTPUT
 

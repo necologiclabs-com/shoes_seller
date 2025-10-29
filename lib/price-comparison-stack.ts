@@ -394,6 +394,7 @@ export class PriceComparisonStack extends cdk.Stack {
         new cdk.CfnOutput(this, 'FrontendBucketName', {
             value: frontendBucket.bucketName,
             description: 'S3 Bucket Name for Frontend',
+            exportName: 'PriceComparisonFrontendBucket',
         });
 
         new cdk.CfnOutput(this, 'FrontendBucketArn', {
@@ -404,6 +405,7 @@ export class PriceComparisonStack extends cdk.Stack {
         new cdk.CfnOutput(this, 'CloudFrontDistributionId', {
             value: distribution.distributionId,
             description: 'CloudFront Distribution ID',
+            exportName: 'PriceComparisonFrontendDistribution',
         });
 
         new cdk.CfnOutput(this, 'CloudFrontDomainName', {
@@ -655,19 +657,7 @@ export class PriceComparisonStack extends cdk.Stack {
             description: 'API Server Error Alarm ARN',
         });
 
-        // GitHub Actions用のアウトプット
-        new cdk.CfnOutput(this, 'FrontendBucketName', {
-            value: frontendBucket.bucketName,
-            description: 'Frontend S3 Bucket Name',
-            exportName: 'PriceComparisonFrontendBucket',
-        });
-
-        new cdk.CfnOutput(this, 'FrontendDistributionId', {
-            value: distribution.distributionId,
-            description: 'Frontend CloudFront Distribution ID',
-            exportName: 'PriceComparisonFrontendDistribution',
-        });
-
+        // GitHub Actions用の追加アウトプット
         new cdk.CfnOutput(this, 'ImagesBucketName', {
             value: productImagesBucket.bucketName,
             description: 'Product Images S3 Bucket Name',
