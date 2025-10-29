@@ -98,6 +98,21 @@ jobs:
       - name: Build TypeScript
         run: npm run build
 
+      - name: Build Lambda Layers
+        run: |
+          cd lambda/layers/shared/nodejs
+          npm ci
+          npx tsc
+
+      - name: Build Lambda Functions
+        run: |
+          for dir in lambda/get-products lambda/get-product-detail lambda/get-prices lambda/update-prices lambda/sync-products; do
+            cd $dir
+            npm ci
+            npx tsc
+            cd ../../..
+          done
+
       - name: CDK Synth
         run: npm run synth
 
