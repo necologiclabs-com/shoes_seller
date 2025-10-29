@@ -106,11 +106,12 @@ jobs:
 
       - name: Build Lambda Functions
         run: |
-          for dir in lambda/get-products lambda/get-product-detail lambda/get-prices lambda/update-prices lambda/sync-products; do
-            cd $dir
+          for dir in get-products get-product-detail get-prices update-prices sync-products; do
+            echo "Building lambda/$dir..."
+            cd lambda/$dir
             npm ci
             npx tsc
-            cd ../../..
+            cd ../..
           done
 
       - name: CDK Synth
