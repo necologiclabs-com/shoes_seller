@@ -14,6 +14,12 @@ dist
 .env
 .env.local
 
+# Secrets (DO NOT COMMIT)
+GITHUB_SECRETS_VALUES.md
+*_VALUES.md
+*.secret
+*.key
+
 # IDE
 .vscode
 .idea
