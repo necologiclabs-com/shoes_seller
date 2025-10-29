@@ -26,6 +26,16 @@ export class ProductRepository {
         await putItem(item);
     }
 
+    async update(productId: string, updates: Partial<Omit<Product, 'id'>>): Promise<void> {
+        const product = await this.findById(productId);
+        if (!product) {
+            throw new Error(`Product not found: ${productId}`);
+        }
+
+        const updatedProduct = { ...product, ...updates };
+        await this.save(updatedProduct);
+    }
+
     async findById(productId: string): Promise<Product | null> {
         const item = await getItem<ProductItem>(`PRODUCT#${productId}`, 'METADATA');
         return item ? itemToProduct(item) : null;
