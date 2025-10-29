@@ -6,3 +6,5 @@ frontend/node_modules/
 frontend/dist/
 **/*.d.ts
 lambda/sync-products/index.js
+scripts/*.js
+scripts/*.cjs

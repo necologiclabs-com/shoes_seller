@@ -17,7 +17,8 @@
         "baseUrl": ".",
         "paths": {
             "/opt/nodejs/*": [
-                "../layers/shared/nodejs/*"
+                "../layers/shared/nodejs/*.d.ts",
+                "../layers/shared/nodejs/*/index.d.ts"
             ]
         }
     },
