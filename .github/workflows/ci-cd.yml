@@ -98,11 +98,18 @@ jobs:
       - name: Build TypeScript
         run: npm run build
 
+      - name: Clean Lambda build artifacts
+        run: |
+          find lambda -name "*.js" -type f -delete
+          find lambda -name "*.d.ts" -type f -delete
+          find lambda -name "*.js.map" -type f -delete
+
       - name: Build Lambda Layers
         run: |
           cd lambda/layers/shared/nodejs
           npm ci
           npx tsc
+          cd ../../../..
 
       - name: Build Lambda Functions
         run: |
