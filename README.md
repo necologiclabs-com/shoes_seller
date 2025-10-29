@@ -1013,3 +1013,5 @@ For issues, questions, or suggestions:
 **Built with ❤️ for trail runners**
 
 # CI/CD Pipeline Test - GitHub Actions
+
+# Route53 record removed, ready for CDK management
