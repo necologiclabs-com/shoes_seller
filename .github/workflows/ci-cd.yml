@@ -124,6 +124,13 @@ jobs:
       - name: CDK Synth
         run: npm run synth
 
+      - name: Verify Lambda builds
+        run: |
+          echo "Checking Lambda function builds..."
+          ls -la lambda/get-products/
+          echo "---"
+          ls -la lambda/layers/shared/nodejs/ | head -20
+
       - name: CDK Deploy
         run: npm run deploy
         env:
