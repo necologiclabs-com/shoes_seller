@@ -70,6 +70,10 @@ jobs:
         working-directory: ./frontend
         run: npm ci
 
+      - name: Clean previous build
+        working-directory: ./frontend
+        run: rm -rf dist
+
       - name: Build frontend
         working-directory: ./frontend
         run: npm run build
